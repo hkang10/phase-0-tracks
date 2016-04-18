@@ -12,4 +12,16 @@ Branch by defnition is a line of development.  It basically clones what you have
 Commits are essentially the same as save points where you are working on a project and it saves at the point of where you're at on the project.  If for some reason, you come across a non-working version, you can always commit yourself back to the version that was working.  A good commit message is short and sweet.  It should be specific not vague so that it allows you to know at what point of the project you were at.
 
 * What is a merge conflict?
- A merge conflict happens when a commit to be merged in has a change in one place, and the current commit has a change in the same place.
+ A merge conflict happens when a commit to be merged in has a change in one place, and the current commit has a change in the same place. To resolve a merge conflict, sometimes the command line will tell you how to resolve. So you either have to create a whole file to save your changes and merge then or choose which file to keep.
+
+Reasons for using a GitHub:
+Central place to manage your repositories and for others to access yours as well if you are working on the same project.
+
+Different between Git and Github:
+Git is a revision control system, a tool to manage your source code history. 
+GitHub is a hosting service for Git repositories.
+
+Explain the three states of a file in Git:
+1. Committed: Means data are safely stored in your data base
+2. Modified: Means you have changed the file but have no been committed into your data bases
+3. Staged: Means you have marked a modified version in current state that will go into your committed data base
