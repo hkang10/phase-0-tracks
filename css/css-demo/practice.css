@@ -12,3 +12,10 @@
 ul {
   font-size: .8em;
 }
+
+section:hover {
+  background-color: white;
+}
+.main {
+  color: red;
+}
