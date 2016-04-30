@@ -1,0 +1,23 @@
+h1{
+  position: relative;
+  color: blue;
+  text-align: center;
+}
+.octopus {
+  position: relative;
+  top: 50px;
+  left: 600px
+}
+
+.glasses{
+  position: relative;
+  bottom: 79px;
+  left: 426px;
+  z-index:1;
+}
+.hat{
+  position:relative;
+  bottom: 125px;
+  left: 225px;
+  z-index: 1;
+}
