@@ -1,3 +1,33 @@
+body{
+  max-width: 960px;
+}
+
+#external-links{
+  position: relative;
+  width: 20%;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.repsonsive-image{
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+main{
+  width: 756px;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+img{
+  max-width: 100%;
+  height: auto;
+  width: auto;
+}
+
+
 blockquote {
   border-left: 5px solid blue;
   padding: 15px;
@@ -15,7 +45,7 @@ cite {
 }
 
 /* you're welcome to edit the
-image, figure, and figcaption CSS if you'd like, 
+image, figure, and figcaption CSS if you'd like,
 but it's optional! */
 img {
   width: 100%;
@@ -29,4 +59,44 @@ figure {
 figcaption {
   font-style: italic;
   text-align: right;
+}
+
+@media screen and (max-width: 500px) {
+  body {
+    background-color: hotpink;
+    font-size: 65%;
+  }
+  h1{
+    font-size: 1em
+  }
+}
+
+@media all and (min-width: 700px) {
+    body{
+        font-size: 18px;
+    }
+}
+
+@media all and (min-width: 250px) and (max-width: 500px)  {
+    body{
+        font-size: 18px;
+    }
+}
+
+@media all and (max-width: 350px) {
+    body{
+        font-size: 12px;
+    }
+
+}
+
+@media handheld and (orientation: landscape) {
+  body {
+    font-weight: bold;
+  }
+}
+@media handheld and (orientation: portrait) {
+    body{
+      font-size: 50%;
+    }
 }
