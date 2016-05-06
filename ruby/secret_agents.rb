@@ -1,5 +1,6 @@
 #Password will be passed through two methods based on user's choice
 #password will either be encrypted or decrypted based on the choice
+#paired with Alex Bills
 
 puts "Secret Agent, do you want to encrypt (e) or decrypt (d) your password?"
 user_choice = gets.chomp
