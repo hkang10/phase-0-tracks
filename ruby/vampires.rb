@@ -27,3 +27,17 @@ garlic_bread = gets.chomp
 
 puts "Would you like to enroll in the company's health insurance?"
 health_insurance = gets.chomp
+
+#Testing Data
+
+if age == current_year - year && (garlic_bread == "yes" || health_insurance == "yes")
+    puts "Probably not a vampire."
+  elsif age != current_year - year && (garlic_bread == "no" || health_insurance == "no")
+    puts "Probably a vampire."
+  elsif age != current_year - year && (garlic_bread == "no" && health_insurance == "no")
+    puts "Almost certainly a vampire"
+  elsif name == "Drake Cula" || name == "Tu Fang"
+    puts "Definitely a vampire"
+  else
+    puts "Results inconclusive"
+end
