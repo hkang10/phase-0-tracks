@@ -1,0 +1,28 @@
+body {
+  background-color: red;
+  font-family:
+}
+
+section{
+   width: 40%;
+  float: left;
+  padding: 5%;
+}
+
+.column-1:hover {
+  background-color: blue;
+}
+
+.column-2:hover {
+  background-color: lightblue;
+}
+
+footer{
+  clear: left;
+}
+
+header{
+  text-align: center;
+  font-family: "Arial";
+  font-style: italic;
+}
