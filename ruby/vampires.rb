@@ -1,3 +1,5 @@
+#Creating a survey for vampire employees
+
 require 'date'
 current_year = Date.today.year
 current_year = current_year.to_i
@@ -29,32 +31,29 @@ health_insurance = gets.chomp
 #Testing Data
 
 if age == current_year - year && (garlic_bread == "yes" || health_insurance == "yes")
-                puts "Probably not a vampire."
+    puts "Probably not a vampire."
+  elsif age != current_year - year && (garlic_bread == "no" || health_insurance == "no")
+    puts "Probably a vampire."
+  elsif age != current_year - year && (garlic_bread == "no" && health_insurance == "no")
+    puts "Almost certainly a vampire"
+  elsif name == "Drake Cula" || name == "Tu Fang"
+    puts "Definitely a vampire"
+  else
+    puts "Results inconclusive"
 end
-
-if age != current_year - year && (garlic_bread == "no" || health_insurance == "no")
-                puts "Probably a vampire."
-end
-
-if age != current_year - year && (garlic_bread == "no" && health_insurance == "no")
-                puts "Almost certainly a vampire"
-end
-
-if name == "Drake Cula"
-                puts "Definitely a vampire"
-elsif name == "Tu Fang"
-                puts "Definitely a vampire"
-else
-                puts "Results inconclusive"
-end
-
 
 #checking for allergies
 
+allergies = "sunshine"
+user_input = " "
 puts "Please list all your allergies and write 'Done' when you are done listing."
-allergies = gets.chomp.downcase!
-until allergies == "done" || allergies == "sunshine"
-puts "Probably a vampire"
+while user_input != "sunshine"
+user_input = gets.chomp.downcase
+break if user_input == "done"
+end
+
+if user_input == "sunshine"
+  puts "Probably a vampire."
 end
 
 count += 1
