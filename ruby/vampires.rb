@@ -41,3 +41,24 @@ if age == current_year - year && (garlic_bread == "yes" || health_insurance == "
   else
     puts "Results inconclusive"
 end
+
+#checking for allergies
+
+allergies = "sunshine"
+user_input = " "
+puts "Please list all your allergies and write 'Done' when you are done listing."
+while user_input != "sunshine"
+user_input = gets.chomp.downcase
+break if user_input == "done"
+end
+
+if user_input == "sunshine"
+  puts "Probably a vampire."
+end
+
+count += 1
+end
+
+#Ending
+
+puts "Actually, nevermind! What do these questions have to do with anything? Let's all be friends."
