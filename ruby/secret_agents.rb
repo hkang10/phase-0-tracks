@@ -10,11 +10,7 @@ def encrypt(password)
       puts alpha[num3]
     i += 1
   end
-end
-
-encrypt("aaa")
-
-def decrypt(password)
+  def decrypt(password)
     i = 0
 
   while i < password.length
@@ -25,6 +21,10 @@ def decrypt(password)
       puts alpha[num2]
     i += 1
   end
+  end
 end
 
-decrypt("aaa")
+
+decrypt(encrypt("swordfish"))
+
+#Since we have a method nested inside a method, since it pass through one paramater, we can still individually run through each method

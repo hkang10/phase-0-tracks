@@ -52,9 +52,8 @@ end
 #checking for allergies
 
 puts "Please list all your allergies and write 'Done' when you are done listing."
-allergies = gets.chomp.downcase
-
-until allergies == "done"
+allergies = gets.chomp.downcase!
+until allergies == "done" || allergies == "sunshine"
 puts "Probably a vampire"
 end
 
