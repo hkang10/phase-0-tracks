@@ -1,0 +1,27 @@
+Elevator
+-Find the button that has an arrow going up by the elevator 
+	-press the up arrow button
+-Wait for an elevator door to open
+-Walk into the open elevator door
+-Turn left then left right away
+-press the floor number which you are trying to get to.
+-wait for elevator door to close
+-now the elevator will start moving up to the floor destination
+-If elevator stops in before your destination, wait for door to close again and the elevator will continue to move up.
+-once arrived on the floor, the elevator door will open
+
+
+Morning routine
+-Alarm goes off at 6:30am
+-Eyes open
+-If eyes don’t open, hit the snooze button and go back to sleep
+-Otherwise, turn off the alarm and proceed to get up.
+-once out of bed, proceed to the bathroom
+-Open toothpaste tube and spread on toothbrush.
+-brush your teeth
+-next Take a shower
+-dry off with towel 
+-get dressed
+-if feeling lazy, proceed to work
+-Otherwise, put on make up 
+-then proceed to work
