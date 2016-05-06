@@ -1,6 +1,12 @@
+#Password will be passed through two methods based on user's choice
+#password will either be encrypted or decrypted based on the choice
+
+puts "Secret Agent, do you want to encrypt (e) or decrypt (d) your password?"
+user_choice = gets.chomp
+puts "Please enter your encrypted/decrypted password"
+user_password = gets.chomp
 def encrypt(password)
     i = 0
-
   while i < password.length
       alpha = "abcdefghijklmnopqrstuvwxyz"
       var = password[i]
@@ -11,12 +17,8 @@ def encrypt(password)
     i += 1
   end
 end
-
-encrypt("aaa")
-
 def decrypt(password)
     i = 0
-
   while i < password.length
       alpha = "abcdefghijklmnopqrstuvwxyz"
       var = password[i]
@@ -26,5 +28,10 @@ def decrypt(password)
     i += 1
   end
 end
-
-decrypt("aaa")
+  if user_choice == "d"
+    puts decrypt(user_password)
+    elsif user_choice == "e"
+    puts encrypt(user_password)
+    else
+   puts "you did not enter e or d, please try again"
+  end
