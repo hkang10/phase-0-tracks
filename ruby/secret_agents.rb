@@ -1,3 +1,5 @@
+#Writing a method within a method
+
 def encrypt(password)
     i = 0
 
