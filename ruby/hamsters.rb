@@ -5,10 +5,10 @@ puts "How loud can your hamster get (Level 1 to 10; 10 being the loudest)?"
 volume = gets.chomp.to_i
 
 puts "What color fur does your hamster have?"
-fur_color = gets.chomp
+fur_color = gets.chomp.to_s
 
 puts "Good candidate for adoption? (Enter 'y' for yes and 'n' for no)"
-adoption = gets.chomp
+adoption = gets.chomp.to_s.downcase!
 
 puts "How old is your hamster? If you don't know just give me an estimate. If you really don't know, just enter '0'"
 age = gets.chomp.to_f
