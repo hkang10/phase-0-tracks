@@ -9,6 +9,14 @@ end
 
 build_array("string", 3, true)
 
+def add_to_array(a, b)
+ a=[]
+ a.push(b)
+ p a
+end
+
+add_to_array([], "strings")
+
 #Release 1: Explore the Docs
 
 drill = ["abc", "job", "school", "hello", "five"]
