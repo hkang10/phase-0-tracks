@@ -8,11 +8,14 @@ puts "Number of children in Client's household:" num_of_children = gets.chomp.to
 puts "Decor Theme: (Modern, Country, Rustic, Contemporary)" theme = gets.chomp.capitalize
 puts "Budget:"
 budget = gets.chomp
+
 #Creating new hash to store Client's data
-interior_design = { Username: name,
+interior_design = {
+  Username: name,
+  Age: age,
+  Number_of_Children: num_of_children, Decor_Theme: theme,
+  Budget: budget
 }
-Age: age,
-Number_of_Children: num_of_children, Decor_Theme: theme,
-Budget: budget
+
 puts ""
 puts "Client's information:" interior_design.each {|x, y| puts "#{x}: #{y}" }
