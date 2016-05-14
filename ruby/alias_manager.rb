@@ -29,3 +29,31 @@ answer = ""
 puts "Would you like a secret name? (yes or no)"
 answer = gets.chomp.downcase
 puts""
+
+#Loops through asking if customer wants multiple alias name.
+
+while (answer != "no") do
+
+puts "What is your first name?"
+first_name = gets.chomp.downcase
+puts ""
+
+puts "What is your last name?"
+last_name = gets.chomp.downcase
+puts ""
+
+alias_name = first_name + last_name
+
+puts "Your new name is " + swap_name(alias_name)
+puts ""
+
+puts "Would you like a another secret name? (yes or no)"
+answer = gets.chomp.downcase
+
+user_input[alias_name] = swap_name(alias_name)
+end
+
+#Prints out result of alias name
+puts""
+user_input.each do |x, y| puts "#{x} is actually #{y}."
+end
