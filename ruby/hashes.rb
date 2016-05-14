@@ -1,5 +1,10 @@
 #New way
-#Retrieving data
+#Retrieving data initially
+#Creating a has to store retrieved data from user input
+#Printing hash to show user input
+#Create a loop to allow user to change incorrect data information
+#Then print correct data information when user types none
+
 puts "Client's name:"
 name = gets.chomp.capitalize
 puts "Client's age:"
