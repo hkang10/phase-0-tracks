@@ -1,3 +1,14 @@
+#Swapping first name and last name.
+
+puts "What is your first name?"
+f_name = gets.chomp.capitalize
+puts ""
+puts "What is your last name?"
+l_name = gets.chomp.capitalize
+puts ""
+
+puts "Your full name is #{l_name}, #{f_name}"
+puts ""
 
 
 #Creating a method that allows to put a name through a test that'll index each vowels and consonants and output one index over.
