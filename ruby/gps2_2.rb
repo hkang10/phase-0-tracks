@@ -54,3 +54,11 @@ end
 # input:
 # steps:
 # output:
+def print_list(grocery_hash={})
+	puts "************"
+	puts "Grocery List"
+	puts "************"
+	grocery_hash.each do |food, quantity| puts "#{food}: #{quantity}"
+	end
+	puts ""
+end
