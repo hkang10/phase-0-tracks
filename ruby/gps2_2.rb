@@ -62,3 +62,19 @@ def print_list(grocery_hash={})
 	end
 	puts ""
 end
+
+#Driver Code
+hash = {}
+list_string = "carrots apples cereal pizza"
+create_list(list_string, hash)
+add_item("tomatoes", hash)
+add_item("lemonade" ,hash)
+add_item("onions" ,hash)
+add_item("icecream" ,hash)
+update_quantity("tomatoes", hash, 3)
+update_quantity("lemonade" ,hash, 2)
+update_quantity("onions" ,hash, 1)
+update_quantity("icecream" ,hash, 4)
+remove_item("lemonade", hash)
+update_quantity("icecream", hash, 1)
+print_list(hash)
