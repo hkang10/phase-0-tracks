@@ -23,6 +23,9 @@ end
 	#add item and quantity to a hash
 	#item =  key and the quantity = data
 # output: returns hash[item => quantity]
+def add_item(item, grocery_hash={})
+	grocery_hash.merge! ({item => 1})
+end
 
 # Method to remove an item from the list
 # input: item name and the hash{}
@@ -30,7 +33,9 @@ end
 	# hash.each do
 	# hash.delete_if {|key| key == item}
 # output: returns hash[item => quantity]
-
+def remove_item(item, grocery_hash={})
+	grocery_hash.delete_if{|food, quantity| food == item}
+end
 # Method to update the quantity of an item
 # input: update_quantity, item, and hash
 # steps:
