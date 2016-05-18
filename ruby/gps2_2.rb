@@ -44,7 +44,12 @@ end
 		#if key = item
 		#item[quantity] = update_quantity
 # output: returns hash[item => quantity]
-
+def update_quantity(item, grocery_hash={}, quantity)
+	if grocery_hash.include?(item)
+		grocery_hash[item] = quantity
+	end
+	return grocery_hash
+end
 # Method to print a list and make it look pretty
 # input:
 # steps:
