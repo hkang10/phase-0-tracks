@@ -66,4 +66,5 @@ while answers != 'done'
   movie_array << movie_instance
 end
 
+#prints user input information by calling the method in the class
 puts movie_array.each{|movie| movie.show_movies}
