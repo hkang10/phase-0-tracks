@@ -11,5 +11,19 @@ function reverseString(str) {
   //returns the new data
 	return newString;
 }
-//driver code to test string
-reverseString('hello');
+
+//add's a condition function that is true.
+function storingData(inputSpring){
+  console.log(inputSpring)
+  newString = reverseString(inputSpring)
+  if(newString != inputSpring){
+    console.log(newString)
+  }
+  else {
+    console.log("error")
+  }
+}
+//driver code
+console.log(reverseString('hello'))
+
+console.log(storingData('olleh'))
