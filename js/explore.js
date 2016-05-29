@@ -1,4 +1,3 @@
-
 //Write a function that will reverse a string
 
 function reverseString(str) {
@@ -25,5 +24,6 @@ function storingData(inputSpring){
 }
 //driver code
 console.log(reverseString('hello'))
+
 
 console.log(storingData('olleh'))
