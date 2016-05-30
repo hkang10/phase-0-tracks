@@ -1,6 +1,8 @@
+//Variables for Release 0 function to use to find the longest word/phrase.
 var words = ["one", "two", "three", "four", "five"]
 var words2 = ["News", "Documentary", "Variety", "Life"]
 
+//Release 0 function that will find the longest word/phrase in the variables given above.
 function longestWord(word) {
   var words = "";
   for (var i=0; i < word.length; i++){
@@ -31,6 +33,26 @@ function KeyValue(name, age){
   return false;
 }
 
+//Release 2 function that randomly generate a word in each array. 
+function randomtest(integerLength){
+  var wordArray = [];
+  var alphabet = 'abcdefghijklmnopqrstuvwxyz';
+
+  if (integerLength != 0) {
+    for (var i=0; i < integerLength; i++){
+      randomWord = "";
+      for (var a=0; a < randomRange(1,10); a++){
+        randomWord += alphabet[randomRange(0,26)];
+      }
+      wordArray.push(randomWord);
+    }
+  }
+  return wordArray;
+}
+
+function randomRange(min, max){
+  return Math.floor(Math.random() *(max) + (min));
+}
 
 //Driver codes
 //Release 0
@@ -42,3 +64,9 @@ console.log(KeyValue(name1, name3))
 console.log(KeyValue(name2, name3))
 
 //Release 2
+for (increment = 1; increment <= 10; increment++){
+  var randomarray = randomtest(5);
+  console.log(increment);
+  console.log(randomarray);
+  console.log(longestWord(randomarray))
+}
