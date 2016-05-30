@@ -19,5 +19,9 @@ class TodoList
   def get_item(item_index)
     @items[item_index]
   end
+<<<<<<< HEAD
 
+=======
+  
+>>>>>>> e3f4cb133484f2b25ebec693a1dd80e3eccee5f7
 end
