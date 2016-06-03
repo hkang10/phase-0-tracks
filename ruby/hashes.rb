@@ -1,74 +1,24 @@
-#New way
-#Retrieving data initially
-#Creating a has to store retrieved data from user input
-#Printing hash to show user input
-#Create a loop to allow user to change incorrect data information
-#Then print correct data information when user types none
+#Pseudocode
+=begin
+Design a program that allows the interior designer
+to enter the details of a given client:
+clients name
+clients age
+number of children
+decor theme
+budget
 
-puts "Client's name:"
-name = gets.chomp.capitalize
-puts "Client's age:"
-age = gets.chomp.to_i
-puts "Number of children in Client's household:"
-num_of_children = gets.chomp.to_i
-puts "Decor Theme: (Modern, Country, Rustic, Contemporary)"
-theme = gets.chomp.capitalize
-puts "Budget:"
-budget = gets.chomp
-
-#Creating new hash to store Client's data
-interior_design = {
-  username: name,
-  age: age,
-  num_of_children: num_of_children,
-  decor_theme: theme,
-  budget: budget
-}
-
-#Printing Client's input information
-puts ""
-puts "Client's information:"
-interior_design.each {|x, y| puts "#{x}: #{y}" }
-
-puts""
-
-#Creating a loop to allow user to update information
-
-new_data = " "
-
-while (new_data != "none") do
-
-puts "What item do you want to change (username, age, children, theme, budget), otherwise type 'none'"
-new_data = gets.chomp.downcase
-
-	if new_data == "username"
-		puts "Client's name: "
-		name = gets.chomp.to_s
-		interior_design[:username] = name
-	elsif new_data == "age"
-		puts "Client's age: "
-		age = gets.chomp.to_i
-		interior_design[:age] = age
-	elsif new_data == "children"
-		puts "Number of children in Client's household: "
-		num_of_children = gets.chomp.to_i
-		interior_design[:num_of_children] = num_of_children
-	elsif new_data == "theme"
-		puts "Decor Theme: (Modern, Country, Rustic, Contemporary)"
-		theme = gets.chomp
-		interior_design[:decor_theme] = theme
-	elsif new_data == "budget"
-		puts "Budget: "
-		budget = gets.chomp
-		interior_design[:budget] = budget
-	else
-		puts " "
-	end
-	puts "What item do you want to change (username, age, num_of_children, decor_theme, budget), otherwise type 'none'"
-		new_data = gets.chomp.downcase
-end
-
-#Print client's information with updated information
-puts ""
-puts "Client's information:"
-interior_design.each {|x, y| puts "#{x}: #{y}" }
+Step 1: Create an empty hash to allow user info to be inputted
+Step 2:prompt the designer/user to input information asked
+Step 3: Print collected information out for confirmation
+Step 4: Write a loop that prompts for user error.
+        "What needs to be changed?"
+      if
+        user inputs category name
+        prompt the user to input new value
+        print information with new values included
+      else
+        user enters 'none'
+        skip to print a confirmation report.
+      end
+=end
