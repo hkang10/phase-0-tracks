@@ -11,7 +11,7 @@ budget
 Step 1: Create an empty hash to allow user info to be inputted
 Step 2:prompt the designer/user to input information asked
 Step 3: Print collected information out for confirmation
-Step 4: Write a loop that prompts for user error.
+Step 4: Write a if/else statement that prompts for user update.
         "What needs to be changed?"
       if
         user inputs category name
@@ -23,8 +23,10 @@ Step 4: Write a loop that prompts for user error.
       end
 =end
 
+#Created an empty hash to initialize the hash and to input user info.
 interior_design = {}
 
+#Prompts the user to input user info and enters into the empty hash above
 p "What is the Client's name?"
 interior_design[:name] = gets.chomp.capitalize
 p "What is the Client's age?"
@@ -36,6 +38,7 @@ interior_design[:decor_theme] = gets.chomp.capitalize
 p "What is your budget?"
 interior_design[:budget] = gets.chomp.to_i
 
+#Prints user input info thats collected in a hash
 p ""
 p "------------------"
 p "Client Information"
@@ -44,6 +47,7 @@ interior_design.each do |category, user_info|
   puts "#{category}:  #{user_info}"
 end
 
+#Prompts user for any update needed and prints out the final result with updated information
 p ""
 p "What information would you like to update?"
 p "(name, age, children, theme, budget)"
