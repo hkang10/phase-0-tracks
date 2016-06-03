@@ -8,7 +8,7 @@
 p "iNvEsTiGaTiOn".swapcase
 #=> "InVeStIgAtIoN"
 
-puts ""
+puts "---"
 
 #2
 p "zom".insert 2, "o"
@@ -18,49 +18,49 @@ p "zom".insert 2, "o"
 p "zom".replace "zoom"
 # => “zoom”
 
-puts ""
+puts "---"
 
 #3
 p "enhance".center(15)
 # => "    enhance    "
 
-puts ""
+puts "---"
 
 #4
 p "Stop! You’re under arrest!".upcase
 # => "STOP! YOU’RE UNDER ARREST!"
 
-puts ""
+puts "---"
 
 #5
 p "the usual".insert 9, " suspects"
 #=> "the usual suspects"
 
-puts ""
+puts "---"
 
 #6
 p " suspects".insert 0, "the usual"
 # => "the usual suspects"
 
-puts ""
+puts "---"
 
 #7
 p "The case of the disappearing last letter".chomp("r")
 # => "The case of the disappearing last lette"
 
-puts ""
+puts "---"
 
 #8
 p "The mystery of the missing first letter".delete "T"
 # => "he mystery of the missing first letter"
 
-puts ""
+puts "---"
 
 #9
 p "Elementary,    my   dear        Watson!".squeeze
 # => "Elementary, my dear Watson!"
 
-puts ""
+puts "---"
 
 #10
 p "z".ord
@@ -68,10 +68,10 @@ p "z".ord
 # (What is the significance of the number 122 in relation to the character z?)
 # 122 is the integer of character "z"
 
-puts ""
+puts "---"
 
 #11
 p "How many times does the letter 'a' appear in this string?".count "a"
 # => 4
 
-puts ""
+puts "---"
