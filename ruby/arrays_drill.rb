@@ -1,40 +1,41 @@
-#Release 2: Use Arrays in Methods
-def build_array(x, y, z)
- a=[]
- a<<x
- a<<y
- a<<z
- p a
+#Release 2
+def grocery(x, y, z)
+  list = []
+  list << x
+  list << y
+  list << z
+  return list
 end
 
-build_array("string", 3, true)
+p grocery(4, 5, 6)
 
-def add_to_array(a, b)
- a=[]
- a.push(b)
- p a
+def add_to_array(array1, add_item)
+  array1 << add_item
+  return array1
 end
 
-add_to_array([], "strings")
+p add_to_array([],"something")
 
-#Release 1: Explore the Docs
+#Release 1
 
-drill = ["abc", "job", "school", "hello", "five"]
-drill
+array = []
+p array
 
-drill.delete_at(2)
-p drill
+array.push("Green beans", "Eggs", "French Onion", "pasta","tomato")
+p array
 
-drill.insert(2, "dbc")
-p drill
+array.delete_at(2)
+p array
 
-drill.delete "abc"
-p drill
+array.insert(2, "hot sauce")
+p array
 
-p "True or false, does it include the word hello?"
-p drill.include?("hello")
-p drill
+array.shift
+p array
 
-array = ["abby", "jessica", "vanessa", "george"]
+p "Does this include eggs?"
+p array.include?("Eggs")
 
-new = drill.concat(array)
+array_two = %w[cheese yogurt milk salt]
+combine = array.concat(array_two)
+p combine
