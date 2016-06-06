@@ -1,4 +1,5 @@
 #Release 2: Design and Build a Nested Data Structure #Build a nested data structure
+#Rollercoaster map Hash and Arrays
 six_flags = {
   yankee_harbor: {
     num_of_rollercoaster: 5,
