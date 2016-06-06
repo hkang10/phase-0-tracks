@@ -1,4 +1,5 @@
 #Release 2: Design and Build a Nested Data Structure #Build a nested data structure
+#Rollercoaster map Hash and Arrays
 six_flags = {
   yankee_harbor: {
     num_of_rollercoaster: 5,
@@ -36,30 +37,37 @@ six_flags = {
 }
 
 #Release 2: Accessing nested items
+puts "------------------------------------------------------------------------------------"
 puts "How many rollercoasters are in Orleans Place?"
 p six_flags[:orleans_place][:num_of_rollercoaster]
 puts ""
 
+puts "------------------------------------------------------------------------------------"
 puts "Please remove the closed restaurant 'Fiesta Fries Cantina' from Southwest Territory."
 six_flags[:southwest_territory][:restaurants].delete("Fiesta Fries Cantina")
 puts""
 
+puts "------------------------------------------------------------------------------------"
 puts "Your new list of restaurants in Southwest Territory is: "
 p six_flags[:southwest_territory][:restaurants]
 puts""
 
+puts "------------------------------------------------------------------------------------"
 puts "Please add 'Fiesta Fries Cantina' to Yankee Harbor."
-six_flags[:yankee_harbor][:restaurants].push("Fiesta Fries Cantina")
+p six_flags[:yankee_harbor][:restaurants].push("Fiesta Fries Cantina")
 puts ""
 
+puts "------------------------------------------------------------------------------------"
 puts "Your new list of resturants in Yankee Harbor is: "
 p six_flags[:yankee_harbor][:restaurants]
 puts ""
 
+puts "------------------------------------------------------------------------------------"
 puts "What rollercoasters are in Orleans Place?"
 p six_flags[:orleans_place][:list_of_rollercoaster]
 puts ""
 
+puts "------------------------------------------------------------------------------------"
 puts "What is the first listed rollercoaster ride in Yankee Harbor?"
 p six_flags[:yankee_harbor][:list_of_rollercoaster].first
 puts ""
