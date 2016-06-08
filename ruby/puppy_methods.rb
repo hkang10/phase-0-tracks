@@ -34,3 +34,47 @@ puppy.speak(5)
 puppy.roll_over
 puppy.dog_years(14)
 puppy.stay
+
+
+#Creating my own Class (Release 2)
+
+class Spiderman
+  def initialize
+    p "Initializing a new spiderman instance...."
+  end
+
+  def web(number)
+    number.times{p "**web!**"}
+  end
+
+  def crawl(building)
+    p "I'm crawling on #{building}!"
+  end
+
+  def swinging
+    p "**swinging**"
+  end
+
+  def criminals(num_of_criminals_captured)
+    p "I captured #{num_of_criminals_captured} criminals!"
+  end
+
+end
+
+spiderman_array =[]
+i = 0
+until i > 50
+  spiderman_array[i] = Spiderman.new
+  spiderman_array << i
+  i += 1
+end
+
+
+spiderman = Spiderman.new
+spiderman.each do |data|
+
+  spiderman.web(5)
+  spiderman.crawl("John Hancock")
+  spiderman.swinging
+  spiderman.criminals(10)
+end
