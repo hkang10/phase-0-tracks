@@ -1,3 +1,4 @@
+class Puppy
 #Puppy Class
 
 #Characteristics
@@ -16,3 +17,4 @@
 #Rollover
 #Fetch
 #Come
+end
