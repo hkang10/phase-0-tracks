@@ -1,79 +1,77 @@
 class Puppy
-
-#Initializing a hash
   def initialize
-    puts "Initalizing new puppy instance...."
+    p "Initializing new puppy instance..."
   end
-#Method that calls the dog to fetch a toy
+
   def fetch(toy)
     puts "I brought back the #{toy}!"
     toy
   end
-#Method that calls the dog to speak x amount of times
-  def speak(i)
-  i.times {p "woof"}
+
+  def speak(num)
+    num.times{p "Woof!"}
   end
-#Method that calls the dog to rollover
+
   def roll_over
-    puts "roll over"
-  end
-#Method that calculates the dog's age
-  def dog_years(human_years)
-  puts human_years / 7
-  end
-#Method that calls the dog to jump
-  def jump
-    puts "Jump on Audrey"
+    p "**rolls over**"
   end
 
+  def dog_years(human_age)
+    dog_years = human_age/7
+    puts "Your dog is #{dog_years} old."
+  end
 
+  def stay
+    p "**stays**"
+  end
 end
 
-#Initializing a class
-chewy = Puppy.new
-#Calling methods that allows dog to learn commands by owner.
-chewy.speak(5)
-chewy.fetch("ball")
-chewy.roll_over
-chewy.dog_years(14)
-chewy.jump
 
-#Write your own class
+#Driver Codes
+puppy = Puppy.new
+puppy.fetch("ball")
+puppy.speak(5)
+puppy.roll_over
+puppy.dog_years(14)
+puppy.stay
 
-class Cooking
 
-#Initializing cooking class
+#Creating my own Class (Release 2)
+
+class Spiderman
   def initialize
-    puts "Welcome to your first cooking class!"
+    p "Initializing a new spiderman instance...."
   end
 
-  def knife(i)
-    i.times{p "chop"}
+  def web(number)
+    number.times{p "**web!**"}
   end
 
-  def seasoning(x)
-    x.times{p "shake"}
+  def crawl(building)
+    p "I'm crawling on #{building}!"
   end
 
-  def secret_ingredient(ing)
-    puts "The only ingredient you need is #{ing}"
+  def swinging
+    p "**swinging**"
   end
+
+  def criminals(num_of_criminals_captured)
+    p "I captured #{num_of_criminals_captured} criminals!"
+  end
+
 end
 
-#looping a method until 50 times later.
-
-cooking_array = []
-i = 1
+spiderman_array =[]
+i = 0
 until i > 50
-cooking_array[i] = Cooking.new
-cooking_array << i
-i += 1
+  spiderman_array[i] = Spiderman.new
+  spiderman_array << i
+  i += 1
 end
 
-#call the methods
-
-ObjectSpace.each_object Cooking do |obj|
-obj.knife(5)
-obj.seasoning(5)
-obj.secret_ingredient("salt")
+ObjectSpace.each_object Spiderman do |data|
+data.web(5)
+data.crawl("John Hancock")
+data.swinging
+data.criminals(10)
 end
