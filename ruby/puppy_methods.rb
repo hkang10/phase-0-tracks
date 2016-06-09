@@ -69,12 +69,9 @@ until i > 50
   i += 1
 end
 
-
-spiderman = Spiderman.new
-spiderman.each do |data|
-
-  spiderman.web(5)
-  spiderman.crawl("John Hancock")
-  spiderman.swinging
-  spiderman.criminals(10)
+ObjectSpace.each_object Spiderman do |data|
+data.web(5)
+data.crawl("John Hancock")
+data.swinging
+data.criminals(10)
 end
