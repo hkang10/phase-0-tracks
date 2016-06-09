@@ -85,9 +85,24 @@ p update_quantity("ice cream", grocery_list, 1)
 
 print_list(grocery_list)
 
+=begin
 What did you learn about pseudocode from working on this challenge?
+Psuedocoding definitely helped sort out your thought process in how to code.
+writing step by step really made coding a lot easier.
+
 What are the tradeoffs of using arrays and hashes for this challenge?
+hashes can be difficult to manipulate
+
 What does a method return?
+a method implicit retunrs the last executed line otherwise it returns whaterver is explicitly specified.
+
 What kind of things can you pass into methods as arguments?
+you can pass through strings, numbers, methods, hash, arrays, and much more. any objects can pass through a method argument.
+
 How can you pass information between methods?
+by sharing parameters
+
 What concepts were solidified in this challenge, and what concepts are still confusing?
+trying to connect methods using the same hash.
+
+=end
