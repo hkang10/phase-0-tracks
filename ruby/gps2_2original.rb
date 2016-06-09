@@ -55,10 +55,10 @@ end
 # steps:
 # output:
 def print_list(grocery_hash={})
-	puts "************"
+	puts "*" * 40
 	puts "Grocery List"
-	puts "************"
-	grocery_hash.each do |food, quantity| puts "#{food}: #{quantity}"
+	puts "*" * 40
+	grocery_hash.each do |food, quantity| puts "#{food}:".ljust(30) + "#{quantity}".rjust(10)
 	end
 	puts ""
 end
