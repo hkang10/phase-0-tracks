@@ -1,74 +1,119 @@
-#New way
-#Retrieving data initially
-#Creating a has to store retrieved data from user input
-#Printing hash to show user input
-#Create a loop to allow user to change incorrect data information
-#Then print correct data information when user types none
+#Pseudocode
+=begin
+Design a program that allows the interior designer
+to enter the details of a given client:
+clients name
+clients age
+number of children
+decor theme
+budget
 
-puts "Client's name:"
-name = gets.chomp.capitalize
-puts "Client's age:"
-age = gets.chomp.to_i
-puts "Number of children in Client's household:"
-num_of_children = gets.chomp.to_i
-puts "Decor Theme: (Modern, Country, Rustic, Contemporary)"
-theme = gets.chomp.capitalize
-puts "Budget:"
-budget = gets.chomp
+Step 1: Create an empty hash to allow user info to be inputted
+Step 2:prompt the designer/user to input information asked
+Step 3: Print collected information out for confirmation
+Step 4: Write a if/else statement that prompts for user update.
+        "What needs to be changed?"
+      if
+        user inputs category name
+        prompt the user to input new value
+        print information with new values included
+      else
+        user enters 'none'
+        skip to print a confirmation report.
+      end
+=end
 
-#Creating new hash to store Client's data
-interior_design = {
-  username: name,
-  age: age,
-  num_of_children: num_of_children,
-  decor_theme: theme,
-  budget: budget
-}
+#Created an empty hash to initialize the hash and to input user info.
+interior_design = {}
 
-#Printing Client's input information
-puts ""
-puts "Client's information:"
-interior_design.each {|x, y| puts "#{x}: #{y}" }
+#Prompts the user to input user info and enters into the empty hash above
+p "What is the Client's name?"
+interior_design[:name] = gets.chomp.capitalize
+p "What is the Client's age?"
+interior_design[:age] = gets.chomp.to_i
+p "How many children does the client have?"
+interior_design[:num_of_children] = gets.chomp.to_i
+p "Choose your decor theme. (Modern, Contemporary, Rustic, Country)"
+interior_design[:decor_theme] = gets.chomp.capitalize
+p "What is your budget?"
+interior_design[:budget] = gets.chomp.to_i
 
-puts""
-
-#Creating a loop to allow user to update information
-
-new_data = " "
-
-while (new_data != "none") do
-
-puts "What item do you want to change (username, age, children, theme, budget), otherwise type 'none'"
-new_data = gets.chomp.downcase
-
-	if new_data == "username"
-		puts "Client's name: "
-		name = gets.chomp.to_s
-		interior_design[:username] = name
-	elsif new_data == "age"
-		puts "Client's age: "
-		age = gets.chomp.to_i
-		interior_design[:age] = age
-	elsif new_data == "children"
-		puts "Number of children in Client's household: "
-		num_of_children = gets.chomp.to_i
-		interior_design[:num_of_children] = num_of_children
-	elsif new_data == "theme"
-		puts "Decor Theme: (Modern, Country, Rustic, Contemporary)"
-		theme = gets.chomp
-		interior_design[:decor_theme] = theme
-	elsif new_data == "budget"
-		puts "Budget: "
-		budget = gets.chomp
-		interior_design[:budget] = budget
-	else
-		puts " "
-	end
-	puts "What item do you want to change (username, age, num_of_children, decor_theme, budget), otherwise type 'none'"
-		new_data = gets.chomp.downcase
+#Prints user input info thats collected in a hash
+p ""
+p "------------------"
+p "Client Information"
+p "------------------"
+interior_design.each do |category, user_info|
+  puts "#{category}:  #{user_info}"
 end
 
-#Print client's information with updated information
-puts ""
-puts "Client's information:"
-interior_design.each {|x, y| puts "#{x}: #{y}" }
+#Prompts user for any update needed and prints out the final result with updated information
+p ""
+p "What information would you like to update?"
+p "(name, age, children, theme, budget)"
+p "or else type 'done'."
+update = gets.chomp.downcase
+if update == "name"
+  p "What is the Client's name?"
+  new_name = gets.chomp.capitalize
+  interior_design[:name] = new_name
+  p ""
+  p "------------------"
+  p "Client Information"
+  p "------------------"
+  interior_design.each do |category, user_info|
+    puts "#{category}:  #{user_info}"
+  end
+elsif update == "age"
+  p "What is the Client's age?"
+  new_age = gets.chomp.to_i
+  interior_design[:age] = new_name
+  p ""
+  p "------------------"
+  p "Client Information"
+  p "------------------"
+  interior_design.each do |category, user_info|
+    puts "#{category}:  #{user_info}"
+  end
+elsif update == "children"
+  p "How many children does the Client have?"
+  new_num_of_children = gets.chomp.to_i
+  interior_design[:num_of_children] = new_num_of_children
+  p ""
+  p "------------------"
+  p "Client Information"
+  p "------------------"
+  interior_design.each do |category, user_info|
+    puts "#{category}:  #{user_info}"
+  end
+elsif update == "theme"
+  p "Choose your decor theme. (Modern, Contemporary, Rustic, Country)"
+  new_decor_theme = gets.chomp.capitalize
+  interior_design[:decor_theme] = new_decor_theme
+  p ""
+  p "------------------"
+  p "Client Information"
+  p "------------------"
+  interior_design.each do |category, user_info|
+    puts "#{category}:  #{user_info}"
+  end
+elsif update == "budget"
+  p "What is your budget?"
+  new_budget = gets.chomp.to_f
+  interior_design[:budget] = new_budget
+  p ""
+  p "------------------"
+  p "Client Information"
+  p "------------------"
+  interior_design.each do |category, user_info|
+    puts "#{category}:  #{user_info}"
+  end
+else update == "done"
+  p ""
+  p "------------------"
+  p "Client Information"
+  p "------------------"
+  interior_design.each do |category, user_info|
+    puts "#{category}:  #{user_info}"
+  end
+end

@@ -1,103 +1,81 @@
-#Release 0
-
-def iteration
-  name1 = "Audrey"
-  name2 = "Anish"
-  puts "I am learning iteration!"
-  2.times { yield(name1, name2) }
-
-end
-iteration { |name1, name2| puts "#{name1} and #{name2} come and learn!" }
-
 #Release 1
+#array
+fridge = %w[milk egg yogurt cheese juice]
 
-# this is an array
+#hash
+freezer = { "pizza" => "day 1",
+            "shrimp" => "day 2",
+            "hash browns" => "day 3",
+            "chicken" => "day 4",
+            "ice cream" => "day 5"}
 
-list_of_cars = %w[ BMW, Acura, Audi, Tesla ]
-
-# this is a hash
-
-upscale_cars = {
-  "Day 1" => "lamborgini",
-  "Day 2" => "Ferrari",
-  "Day 3" => "Maserati",
-  "Day 4" => "Aston Martin"
-}
-
-# this is .each for an array
-
-puts "Before .each call:"
-p list_of_cars
-
-list_of_cars.each do |cars|
-  list_of_cars.delete_at(3)
+#iterating through an array using .each and .map! method
+puts ""
+p "*** List of items in fridge ***"
+fridge.each do |food|
+  puts "Yumm....#{food}"
 end
-puts "After .each call:"
-p list_of_cars
+#deleting last item in array
+fridge.pop
 
-# this is .map for an array
-
-puts "Before .map call:"
-p list_of_cars
-
-modified = list_of_cars.map do |cars|
-  puts cars
-  cars.upcase
+#printing new list of array
+puts ""
+p "*** New list of items in fridge ***"
+fridge.map! do |food|
+  puts "Yumm....#{food}"
 end
 
-puts "After .map call:"
-p modified
+#iterating through a hash using .each method
+puts ""
+p "*** List of freezer items ***"
+freezer.each do |food, day|
+  puts "#{food} on #{day}"
+end
 
-# this is .each for hash
+#deleting an object from hash
+freezer.delete("pizza")
 
-puts "Before .each call:"
-p upscale_cars
-
-upscale_cars.each {|days, cars| puts days, cars}
-p upscale_cars
-
-upscale_cars.delete("Day 1")
-
-puts "After .each call:"
-p upscale_cars
+#printing new list of hash after modification
+puts ""
+p "*** New list of freezer items ***"
+freezer.each do |food, day|
+  puts "#{food} on #{day}"
+end
 
 #Release 2
-
 array = [ 1, 2, 3, 4, 5]
 
 hash = {
-  "a" => 1,
-  "b" => 2,
-  "c" => 3,
-  "d" => 4,
-  "e" => 5
+  "a" => 1,
+  "b" => 2,
+  "c" => 3,
+  "d" => 4,
+  "e" => 5
 }
-
-#Running conditions through an array
-
+#A method that iterates through the items, deleting any that meet a certain condition (for example, deleting any numbers that are less than 5)
 array.delete_if {|num| num < 3}
 p array
-
-array.keep_if {|num| num > 3}
-p array
-
-array.select! { |num| num.even? }
-p array
-
-array.reject! {|num| num > 2}
-p array
-
-
-#Running conditions through hash
 
 hash.delete_if{|x, y| y < 2}
 puts hash
 
+#A method that filters a data structure for only items that do satisfy a certain condition (for example, keeping any numbers that are less than 5)
+array.keep_if {|num| num > 3}
+p array
+
 hash.keep_if{|x, y| y < 3}
 puts hash
 
+#A different method that filters a data structure for only items satisfying a certain condition -- Ruby offers several options!
+array.select! { |num| num.even? }
+p array
+
 hash.select!{|x, y| y > 2}
 puts hash
+
+#A method that will remove items from a data structure until the condition in the block evaluates to false, then stops
+array.reject! {|num| num > 2}
+p array
 
 hash.reject!{|x, y| y > 3}
 puts hash
