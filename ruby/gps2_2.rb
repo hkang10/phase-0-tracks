@@ -1,89 +1,108 @@
 # Method to create a list
 # input: string of items separated by spaces (example: "carrots apples cereal pizza")
 # steps:
-  # [fill in any steps here]
-  # set default quantity
-  # print the list to the console [can you use one of your other methods here?]
-# output: [what data type goes here, array or hash?]
-def create_list(list, grocery_hash={})
-	list_array = list.split(" ")
-	quantity = 0
-	list_array.each do |item|
-		grocery_hash[item]=quantity
-	end
-	print_list(grocery_hash)
-	return grocery_hash
-end
+  # take input as string and split it
+  # define a hash with the items in the grocery list as keys
+# set default quantity - 1
+# print the list to the console [can you use one of your other methods here?]
+# output: hash with the grocery items as keys and their quantity as value
+
+  def create_list(items)
+    grocery_list = {}
+    list_items = items.split
+    list_items.each do |item|
+      grocery_list[item] = 1
+    end
+    p print_list(grocery_list)
+  end
+
+
 
 # Method to add an item to a list
 # input: item name and optional quantity
 # steps:
-	#gets.chomp item
-	#gets.to_i an integer for quantity
-	#add item and quantity to a hash
-	#item =  key and the quantity = data
-# output: returns hash[item => quantity]
-def add_item(item, grocery_hash={})
-	grocery_hash.merge! ({item => 1})
-end
+  # push new item to hash, keep default quantity of 1 if unspecified in argument
+  # print new item and quantity
+# output: new item and quantity
+
+  def add_item(item_name, grocery_list, quantity=1)
+    grocery_list[item_name] = quantity
+    grocery_list
+  end
+
 
 # Method to remove an item from the list
-# input: item name and the hash{}
-# steps:
-	# hash.each do
-	# hash.delete_if {|key| key == item}
-# output: returns hash[item => quantity]
-def remove_item(item, grocery_hash={})
-	grocery_hash.delete_if{|food, quantity| food == item}
-end
+# input: name of item (key) that you want to remove
+# steps: use delete to remove item from hash
+# output: deleted item and quantity
+
+  def remove_item(item_name, grocery_list)
+      grocery_list.delete(item_name)
+      grocery_list
+  end
+
+
+
 # Method to update the quantity of an item
-# input: update_quantity, item, and hash
-# steps:
-	#search for item in hash
-	#hash.map! do |key|
-		#if key = item
-		#item[quantity] = update_quantity
-# output: returns hash[item => quantity]
-def update_quantity(item, grocery_hash={}, quantity)
-	if grocery_hash.include?(item)
-		grocery_hash[item] = quantity
-	end
-	return grocery_hash
-end
+# input: name of the item to be updated, new quantity
+# steps: reassign value of that item
+# output: item with updated quantity
+
+  def update_quantity(item_name, grocery_list, quantity)
+      grocery_list[item_name] = quantity
+      grocery_list
+  end
+
 # Method to print a list and make it look pretty
-# input:
-# steps:
-# output:
-def print_list(grocery_hash={})
-	puts "************"
-	puts "Grocery List"
-	puts "************"
-	grocery_hash.each do |food, quantity| puts "#{food}: #{quantity}"
-	end
-	puts ""
-end
+# input: the grocery list
+# steps: iterate through the list
+  # print the name of the item and the quantity for each item
+# output: the name of each item and their respective quantities
+
+  def print_list(grocery_list)
+    puts "*" * 40 + "Grocery List" + "*" * 40
+    grocery_list.each do |item, quantity|
+      puts "#{item.capitalize}".ljust(30) +  "#{quantity}".rjust(10)
+
+    end
+  end
+
 
 #Driver Code
-hash = {}
-list_string = "carrots apples cereal pizza"
-create_list(list_string, hash)
-add_item("tomatoes", hash)
-add_item("lemonade" ,hash)
-add_item("onions" ,hash)
-add_item("icecream" ,hash)
-update_quantity("tomatoes", hash, 3)
-update_quantity("lemonade" ,hash, 2)
-update_quantity("onions" ,hash, 1)
-update_quantity("icecream" ,hash, 4)
-remove_item("lemonade", hash)
-update_quantity("icecream", hash, 1)
-print_list(hash)
+# grocery_list = create_list("carrots apples cereal pizza")
+# p remove_item("apples", grocery_list)
+# p update_quantity("carrots", grocery_list, 10)
+# p add_item("tomatoes", grocery_list, 4)
+# print_list(grocery_list)
+
+create_list("lemonade tomatoes onions")
+grocery_list = create_list("lemonade tomatoes onions")
+p add_item("ice cream", grocery_list, 4)
+
+p update_quantity("lemonade", grocery_list, 2)
+p update_quantity("tomatoes", grocery_list, 3)
+p update_quantity("ice cream", grocery_list, 1)
+
+print_list(grocery_list)
 
 =begin
 What did you learn about pseudocode from working on this challenge?
+Psuedocoding definitely helped sort out your thought process in how to code.
+writing step by step really made coding a lot easier.
+
 What are the tradeoffs of using arrays and hashes for this challenge?
+hashes can be difficult to manipulate
+
 What does a method return?
+a method implicit retunrs the last executed line otherwise it returns whaterver is explicitly specified.
+
 What kind of things can you pass into methods as arguments?
+you can pass through strings, numbers, methods, hash, arrays, and much more. any objects can pass through a method argument.
+
 How can you pass information between methods?
+by sharing parameters
+
 What concepts were solidified in this challenge, and what concepts are still confusing?
+trying to connect methods using the same hash.
+
 =end
