@@ -1,0 +1,80 @@
+Display the information in one table (either table is fine).
+
+sqlite> SELECT * FROM parent;
+
+parent_id|parent_name|phone_num|cell
+1001|Jackie|8399483934|true
+1002|Jason|2949482934|true
+1003|Ron|3942494948|false
+1004|Aubrey|2939382938|false
+
+
+
+Update an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> UPDATE parent SET phone_num = 3941234567 WHERE parent_name = "Ron";
+
+parent_id|parent_name|phone_num|cell
+1001|Jackie|8399483934|true
+1002|Jason|2949482934|true
+1003|Ron|3941234567|false
+1004|Aubrey|2939382938|false
+
+
+Display the information in both tables using one query.
+
+sqlite> SELECT * FROM child, parent WHERE parent_id_num = parent_id;
+
+child_id|child_name|parent_id_num|paren_id|parent_name|phone_num|cell
+1|Janet|1001|1001|Jackie|8399483934|true
+2|Joyce|1001|1001|Jackie|8399483934|true
+3|Jack|1002|1002|Jason|2949482934|true
+4|Jenny|1003|1003|Ron|3941234567|false
+5|Abby|1004|1004|Aubrey|2939382938|false
+6|Robby|1004|1004|Aubrey|2939382938|false
+
+
+
+Display a narrower selection of columns (fewer columns than all of them, in other words) from both tables using one query.
+
+sqlite> SELECT child_name, parent_name, phone_num, cell FROM child, parent WHERE parent_id_num = parent_id;
+
+child_name|parent_name|phone_num|cell
+Janet|Jackie|8399483934|true
+Joyce|Jackie|8399483934|true
+Jack|Jason|2949482934|true
+Jenny|Ron|3941234567|false
+Abby|Aubrey|2939382938|false
+Robby|Aubrey|2939382938|false
+
+
+Delete an item that meets some condition (you can choose a condition that makes sense).
+
+sqlite> DELETE FROM child WHERE child_name = "Robby";
+
+child_id|child_name|parent_id_num
+1|Janet|1001
+2|Joyce|1001
+3|Jack|1002
+4|Jenny|1003
+5|Abby|1004
+
+
+Try a few different joins in your database, and record the commands and the output in queries.txt.
+
+
+sqlite> SELECT * FROM child INNER JOIN parent ON parent_id_num = parent_id;
+
+1|Janet|1001|1001|Jackie|8399483934|true
+2|Joyce|1001|1001|Jackie|8399483934|true
+3|Jack|1002|1002|Jason|2949482934|true
+4|Jenny|1003|1003|Ron|3941234567|false
+5|Abby|1004|1004|Aubrey|2939382938|false
+
+sqlite> SELECT child_id, child_name, parent_name, phone_num FROM child LEFT OUTER JOIN parent ON parent_id_num = parent_id;
+
+1|Janet|Jackie|8399483934
+2|Joyce|Jackie|8399483934
+3|Jack|Jason|2949482934
+4|Jenny|Ron|3941234567
+5|Abby|Aubrey|2939382938
